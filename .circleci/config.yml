@@ -18,6 +18,11 @@ jobs:
             alternatives --install /usr/bin/python3 python3 /usr/bin/python3.11 1
 
       - run:
+          name: create a folder for pip modules
+          command: |
+            mkdir -p /root/.local/bin
+
+      - run:
           name: Print Python Pip Verson
           command: |
             python3 -V
@@ -37,7 +42,7 @@ jobs:
       - run:
           name: Setup Bash Profile
           command: |
-            echo 'export PATH=$PATH:~/.local/bin' > ~/.bash_profile
+            echo 'export PATH=$PATH:/root/.local/bin' > ~/.bash_profile
             echo 'alias ll="ls -la"' > ~/.bashrc
             echo 'source ~/.bash_profile' >> ~/.bashrc
             echo $PATH
