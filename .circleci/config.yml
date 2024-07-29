@@ -68,6 +68,11 @@ jobs:
           command: |
             python3 -m pipenv run ansible-playbook helloworld.playbook
 
+      - run:
+          name: Execute Python script
+          command: |
+            python3 -m pipenv run python main.py
+
 workflows:
   ansible_app:
     jobs:
