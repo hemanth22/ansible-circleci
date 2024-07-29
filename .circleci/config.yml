@@ -58,10 +58,14 @@ jobs:
             python3 -m pip install ansible ansible-lint ansible-core molecule yamllint --user
 
       - run:
-          name: ansible-lint code execution
+          name: ansible permission and install ansible
           command: |
             chmod 755 helloworld.playbook
             python3 -m pipenv install ansible
+
+      - run:
+          name: Provision Ansible modules
+          command: |
             python3 -m pipenv scripts ansible-playbook helloworld.playbook
 
 workflows:
