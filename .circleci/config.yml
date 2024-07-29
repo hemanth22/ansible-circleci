@@ -26,7 +26,14 @@ jobs:
           name: Provision Pip modules
           command: |
             python3.11 -m ensurepip --upgrade --user
+            python3 -m pip install --upgrade pip
             python3 -m pip install requests --user
+
+      - run:
+          name: Print Python Verson
+          command: |
+            pip -V
+
       - run:
           name: Provision Ansible modules
           command: |
