@@ -14,7 +14,8 @@ jobs:
       - run:
           name: Python pip installation
           command: |
-            dnf install python311 wget -y
+            dnf install python311 alternatives wget -y
+            alternatives --install /usr/bin/python3 python3 /usr/bin/python3.11 1
 
       - run:
           name: Print Python Verson
