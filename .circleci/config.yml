@@ -37,9 +37,10 @@ jobs:
       - run:
           name: Setup Bash Profile
           command: |
-            echo 'export PATH=$PATH:/root/.local/bin' > /root/.bash_profile
-            echo 'alias ll="ls -la"' > /root/.bashrc
-            echo 'source ~/.bash_profile' >> /root/.bashrc
+            echo 'export PATH=$PATH:~/.local/bin' > ~/.bash_profile
+            echo 'alias ll="ls -la"' > ~/.bashrc
+            echo 'source ~/.bash_profile' >> ~/.bashrc
+            echo $PATH
 
       - run:
           name: Verify Bash Profile
