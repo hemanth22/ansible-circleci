@@ -4,7 +4,7 @@ version: 2.1
 executors:
   default:
     docker:
-      - image: quay.io/hemanth22/rockylinux9-ansible:d1385e548300eddd2233161d8e7d552d7813da14
+      - image: quay.io/hemanth22/rockylinux9-ansible:926f48508423dbad441247aff00aa4bbe5783399
 
 jobs:
   build:
