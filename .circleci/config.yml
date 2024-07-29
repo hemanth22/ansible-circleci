@@ -32,7 +32,7 @@ jobs:
           command: |
             python3.11 -m ensurepip --upgrade --user
             python3 -m pip install --upgrade pip
-            python3 -m pip install requests --user
+            python3 -m pip install requests pipenv --user
 
       - run:
           name: Print Python Verson
@@ -60,7 +60,9 @@ jobs:
       - run:
           name: ansible-lint code execution
           command: |
-            ansible-lint . | tee >> ansible_lint_error.txt
+            chmod 755 helloworld.playbook
+            python3 -m pipenv install ansible
+            python3 -m pipenv scripts ansible-playbook helloworld.playbook
 
 workflows:
   ansible_app:
