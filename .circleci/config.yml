@@ -61,7 +61,7 @@ jobs:
           name: ansible permission and install ansible
           command: |
             chmod 755 helloworld.playbook
-            python3 -m pipenv install ansible
+            python3 -m pipenv install ansible ansible-lint ansible-runner
 
       - run:
           name: Provision Ansible modules
