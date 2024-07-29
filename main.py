@@ -23,5 +23,5 @@ def run_playbook(playbook_path):
     print("Events:", list(result.events))
 
 if __name__ == "__main__":
-    playbook_path = 'helloworld.playbook'
+    playbook_name = 'helloworld.playbook'
     run_playbook(playbook_path)
