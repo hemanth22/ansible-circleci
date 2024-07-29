@@ -3,6 +3,8 @@ import os
 
 def run_playbook(playbook_path):
     print("Current Directory:", os.getcwd())
+    current_directory = os.getcwd()
+    playbook_path = os.path.join(current_directory, playbook_name)
     
     if not os.path.isfile(playbook_path):
         print(f"Error: The playbook file {playbook_path} does not exist.")
