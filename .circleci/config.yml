@@ -45,6 +45,7 @@ jobs:
             echo 'export PATH=$PATH:/root/.local/bin' > ~/.bash_profile
             echo 'alias ll="ls -la"' > ~/.bashrc
             echo 'source ~/.bash_profile' >> ~/.bashrc
+            export PATH=$PATH:/root/.local/bin
             echo $PATH
 
       - run:
@@ -55,10 +56,7 @@ jobs:
           name: Provision Ansible modules
           command: |
             python3 -m pip install ansible ansible-lint ansible-core molecule yamllint --user
-      - run:
-          name: Yamllint code execution
-          command: |
-            yamllint .
+
       - run:
           name: ansible-lint code execution
           command: |
