@@ -12,20 +12,24 @@ jobs:
     steps:
       - checkout
       - run:
-          name: Print Python Verson
+          name: Python pip installation
           command: |
             dnf install python3-pip wget -y
+
+      - run:
+          name: Print Python Verson
+          command: |
             python3 -V
-            python3 -m pip install requests
+
       - run:
           name: Provision Pip modules
           command: |
+            python3 -m pip install requests
             python3 -m pip install --upgrade pip
       - run:
           name: Provision Ansible modules
           command: |
             python3 -m pip install ansible ansible-lint ansible-core molecule yamllint
-            python3 -m pip install -r requirements.txt
       - run:
           name: Yamllint code execution
           command: |
